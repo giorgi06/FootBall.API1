@@ -6,6 +6,8 @@
     public sealed class UserContext : DbContext
     {
         public DbSet<User> User { get; set; }
+        public DbSet<Player> Player { get; set; }
+        public DbSet<Referee> Referee { get; set; }
 
         public UserContext(DbContextOptions<UserContext> options) 
             : base(options)

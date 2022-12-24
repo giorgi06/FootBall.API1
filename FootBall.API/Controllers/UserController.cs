@@ -20,7 +20,7 @@ namespace FootBall.API.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<ActionResult<IEnumerable<CreateUserModel>>> GetAll()
+        public async Task<ActionResult<IEnumerable<User>>> GetAll()
         {
             return await this.db.User.ToListAsync();
         }
@@ -37,7 +37,7 @@ namespace FootBall.API.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<ActionResult<CreateUserModel>> Create([FromQuery] CreateUserModel user)
+        public async Task<ActionResult<User>> Create([FromQuery] User user)
         {
             if (user == null)
                 return this.BadRequest();
@@ -50,7 +50,7 @@ namespace FootBall.API.Controllers
         }
 
         [HttpPut("[action]")]
-        public async Task<ActionResult<CreateUserModel>> Update ([FromQuery] CreateUserModel user)
+        public async Task<ActionResult<CreateUserModel>> Update ([FromQuery] User user)
         {
             if (user == null)
                 return this.BadRequest();
