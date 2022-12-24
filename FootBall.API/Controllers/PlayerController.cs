@@ -56,7 +56,7 @@ namespace FootBall.API.Controllers
             if (player == null)
                 return this.BadRequest();
 
-            if (!db.User.Any(x => x.Id == player.Id))
+            if (!db.Player.Any(x => x.Id == player.Id))
                 return this.NotFound();
 
             db.Player.Update(player);

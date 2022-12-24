@@ -41,12 +41,46 @@ namespace FootBall.API.Migrations
                     b.Property<int>("NumberOnTshirt")
                         .HasColumnType("int");
 
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Salary")
+                        .HasColumnType("int");
+
                     b.Property<int>("ScoredGoals")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("Player");
+                });
+
+            modelBuilder.Entity("FootBall.API.Entity.Referee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CardsGiven")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Experience")
+                        .HasColumnType("float");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Referee");
                 });
 
             modelBuilder.Entity("FootBall.API.Entity.User", b =>
